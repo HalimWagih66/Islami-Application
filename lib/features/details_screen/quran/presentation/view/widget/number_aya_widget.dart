@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/layout_screen/provider/settings_provider.dart';
+import 'package:Islami/provider/settings_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../../to_arabic_no_covertor.dart';
@@ -17,7 +17,7 @@ WidgetSpan numberAyaWidget(
       },
       child: CircleAvatar(
         backgroundColor: Colors.grey.withOpacity(0.3),
-        radius: 18,
+        radius: 16,
         child: Text(
           settingsProvider.isLanguageEnglish()?ayaNumber.toString():ArabicNumbers.toArabicNumbers(
               ayaNumber.toString()),

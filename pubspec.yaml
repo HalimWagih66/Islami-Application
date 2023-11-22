@@ -1,4 +1,4 @@
-name: islami_app
+name: Islami
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -43,6 +43,7 @@ dependencies:
   dio: ^5.3.3
   http: ^1.1.0
   audioplayers: ^5.2.1
+  flutter_screenutil: ^5.9.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -67,7 +68,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/files/quran/
     - assets/files/hadeth/
     - assets/files/tasbeh/
     - assets/images/details_tasbeh/
@@ -78,8 +78,6 @@ flutter:
     - assets/images/layout screen/quran_tap/
     - assets/images/layout screen/Tasbeh_tap/dark/
     - assets/images/layout screen/Tasbeh_tap/light/
-    - assets/images/splash screen/dark/
-    - assets/images/splash screen/light/
     - assets/images/layout screen/radio_tap/
 
 
@@ -98,12 +96,12 @@ flutter:
     - family: QuranFont
       fonts:
         - asset: assets/fonts/me_quran.ttf
+    - family: ReemKufi
+      fonts:
+        - asset: assets/fonts/ReemKufi-Medium.ttf
     - family: ElMessiri
       fonts:
         - asset: assets/fonts/ElMessiri-Regular.ttf
-    - family: Inter
-      fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
 #         - asset: fonts/Schyler-Italic.ttf
 #           style: italic
   #   - family: Trajan Pro

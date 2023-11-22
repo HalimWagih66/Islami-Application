@@ -19,7 +19,7 @@ class ApiManager{
     return radioResponse.collectionRadio ?? [];
   }
   static Future<List<Surah>?> getNamesSurahs(String language) async {
-    print("language $language");
+    print("getNamesSurahs");
     Uri uri  = Uri.parse("https://mp3quran.net/api/v3/suwar?language=$language");
     http.Response response  = await http.get(uri);
     if (response.statusCode == 200) {

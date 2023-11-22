@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/features/layout_screen/settings/view/widget/field_choose_app_state.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Islami/features/layout_screen/settings/view/widget/field_choose_app_state.dart';
 import 'package:provider/provider.dart';
-import '../../provider/settings_provider.dart';
+import '../../../../provider/settings_provider.dart';
 import 'widget/custom_bottom_sheet.dart';
 
 class SettingsTap extends StatelessWidget {
@@ -12,14 +13,14 @@ class SettingsTap extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<SettingsProvider>(context);
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+      padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 15.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(AppLocalizations.of(context)!.theme,
               style: Theme.of(context).textTheme.titleLarge),
-          const SizedBox(
-            height: 12,
+          SizedBox(
+            height: 12.h,
           ),
           InkWell(
             focusColor: Colors.transparent,
@@ -29,13 +30,13 @@ class SettingsTap extends StatelessWidget {
             },
             child: FieldChooseAppState(text: provider.isDarkEnabled() ? AppLocalizations.of(context)!.dark : AppLocalizations.of(context)!.light),
           ),
-          const SizedBox(
-            height: 30,
+          SizedBox(
+            height: 30.h,
           ),
           Text(AppLocalizations.of(context)!.language,
               style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 20.h,
           ),
           InkWell(
             focusColor: Colors.transparent,

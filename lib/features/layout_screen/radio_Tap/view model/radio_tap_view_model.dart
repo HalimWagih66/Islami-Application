@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../shared/network/local/shared_preferences/radio_data.dart';
 
@@ -9,9 +10,12 @@ class RadioTapViewModel extends ChangeNotifier {
   int selectedRadioStation = 0;
   late bool isPlay = false;
   RadioTapViewModel(){
-   selectedRadioStation = RadioData.getNumberRadioStation()??0;
+    initializeSelectedRadioStation();
   }
-
+  initializeSelectedRadioStation()async{
+    RadioData.radioData = await SharedPreferences.getInstance();
+    selectedRadioStation = RadioData.getNumberRadioStation()??0;
+  }
   void changeTapNumber(int tapNumber) async {
     if (tapNumber != 3 && isPlay) {
       await radioPlayer.pause();
@@ -29,7 +33,9 @@ class RadioTapViewModel extends ChangeNotifier {
     isPlay = false;
     await radioPlayer.pause();
   }
-
+  // void initializeSelectedRadioStation() {
+  //   RadioData.getNumberRadioStation();
+  // }
   Future<void> saveSelectedRadioStation(int value) async {
     selectedRadioStation = value;
     await RadioData.saveNumberRadioStation(value);
@@ -39,6 +45,7 @@ class RadioTapViewModel extends ChangeNotifier {
     if (selectedRadioStation == 0) return;
     if (isPlay) {
       await RadioData.saveNumberRadioStation(selectedRadioStation--);
+      await radioPlayer.stop();
       await onClickPlayRadio(radioUrl);
     } else {
       await RadioData.saveNumberRadioStation(selectedRadioStation--);
@@ -48,6 +55,7 @@ class RadioTapViewModel extends ChangeNotifier {
   Future<void> onPressedNextRadioStation(String radioUrl) async {
     if (isPlay) {
       await RadioData.saveNumberRadioStation(selectedRadioStation++);
+      await radioPlayer.stop();
       await onClickPlayRadio(radioUrl);
     } else {
       await RadioData.saveNumberRadioStation(selectedRadioStation++);

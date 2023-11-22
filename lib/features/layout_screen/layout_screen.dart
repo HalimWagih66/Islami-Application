@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_app/features/layout_screen/provider/settings_provider.dart';
-import 'package:islami_app/features/layout_screen/quran_Tap/view/quran_tap.dart';
-import 'package:islami_app/features/layout_screen/radio_Tap/view%20model/radio_tap_view_model.dart';
-import 'package:islami_app/features/layout_screen/radio_Tap/view/radio_tap.dart';
-import 'package:islami_app/features/layout_screen/settings/view/settings_tap.dart';
-import 'package:islami_app/features/layout_screen/tasbeh_Tap/view/tasbeh_tap.dart';
+import 'package:Islami/provider/settings_provider.dart';
+import 'package:Islami/features/layout_screen/quran_Tap/view/quran_tap.dart';
+import 'package:Islami/features/layout_screen/radio_Tap/view%20model/radio_tap_view_model.dart';
+import 'package:Islami/features/layout_screen/radio_Tap/view/radio_tap.dart';
+import 'package:Islami/features/layout_screen/settings/view/settings_tap.dart';
+import 'package:Islami/features/layout_screen/tasbeh_Tap/view/tasbeh_tap.dart';
 import 'package:provider/provider.dart';
 import 'hadeth_Tap/view/hadeth_tap.dart';
 

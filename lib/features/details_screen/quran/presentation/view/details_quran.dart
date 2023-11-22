@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/details_screen/quran/presentation/view/widget/details_quran_view_body.dart';
+import 'package:Islami/features/details_screen/quran/presentation/view/widget/details_quran_view_body.dart';
 import 'package:provider/provider.dart';
 import '../../../../../models/models.quran/details_sura_arguments.dart';
-import '../../../../layout_screen/provider/settings_provider.dart';
+import '../../../../../provider/settings_provider.dart';
 import '../../model/information_surah_model.dart';
 
 class DetailsSurah extends StatelessWidget {

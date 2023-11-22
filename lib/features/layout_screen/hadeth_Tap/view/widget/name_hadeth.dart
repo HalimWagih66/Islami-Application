@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/models/models.hadeth/hadeth.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Islami/models/models.hadeth/hadeth.dart';
 
 import '../../../../details_screen/hadeth/details_hadeth.dart';
 
@@ -12,7 +13,7 @@ class HadethName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       child: InkWell(
         onTap: (){
           Navigator.pushNamed(context,

@@ -1,14 +1,10 @@
-import 'package:islami_app/shared/network/local/shared_preferences/quran_data.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:Islami/api%20manager/api_manager.dart';
+
 
 class QuranTapViewModel{
-  QuranTapViewModel(){
-    initializeQuranData();
+  QuranTapViewModel(String languageCode){
+    if(future != null) return;
+    future = ApiManager.getNamesSurahs(languageCode);
   }
-  initializeQuranData()async{
-    QuranData.quranData = await SharedPreferences.getInstance();
-  }
-  int getSelectedSurahBookMark(){
-    return QuranData.getSelectedSurahBookMark()??-1;
-  }
+  dynamic future;
 }

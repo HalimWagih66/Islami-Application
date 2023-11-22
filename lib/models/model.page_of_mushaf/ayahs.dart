@@ -1,5 +1,5 @@
 
-import 'package:islami_app/models/model.page_of_mushaf/surah_info_in_page.dart';
+import 'package:Islami/models/model.page_of_mushaf/surah_info_in_page.dart';
 
 /// text : "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
 /// numberInSurah : 1

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/layout_screen/provider/settings_provider.dart';
-import 'package:islami_app/features/layout_screen/tasbeh_Tap/view%20model/tasbeh_tap_view_model.dart';
+import 'package:Islami/provider/settings_provider.dart';
+import 'package:Islami/features/layout_screen/tasbeh_Tap/view%20model/tasbeh_tap_view_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../shared/network/local/shared_preferences/settings_data.dart';
-import 'child_ink_will.dart';
+import 'child_bottom_content_tasbeh_ink_will.dart';
 
 class ShowContentTasbeh extends StatelessWidget {
   const ShowContentTasbeh({super.key, required this.widthScreen});
@@ -20,16 +20,23 @@ class ShowContentTasbeh extends StatelessWidget {
       ),
       width: widthScreen * 0.9,
       child: Row(
-        key: key,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            child: GestureDetector(
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    foregroundColor: const Color(0xFFFACC1D),
+                    padding: EdgeInsets.symmetric(vertical: 50.h),
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17)),
+                    shadowColor: Colors.transparent,
+                    backgroundColor: Colors.transparent
+                ),
                 onLongPress: () async {
-                  await provider.onLongPressNextIconContentTasbeh();
+                  await provider.onLongPressNextContentTasbeh();
                 },
-                onTap: () async {
-                  await provider.onTapPressNextIconContentTasbeh();
+                onPressed: () async {
+                  await provider.onTapPressNextContentTasbeh();
                 },
                 child: Icon(
                   Icons.arrow_back,
@@ -47,25 +54,26 @@ class ShowContentTasbeh extends StatelessWidget {
                 await provider.onTapClickButtonContentTasbeeh(context);
               },
               onLongPress: ()async {
-                await provider.onLongPressCounterTasbeh();
+                await provider.onLongPressContentTasbeh(context);
               },
-              child: ChildInkWill(widthScreen: widthScreen),
+              child: ChildBottomContentInkWil(widthScreen: widthScreen),
             ),
           ),
           Expanded(
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: const Color(0xFFFACC1D), padding: const EdgeInsets.symmetric(vertical: 40),
+                    foregroundColor: const Color(0xFFFACC1D),
+                    padding: EdgeInsets.symmetric(vertical: 50.h),
                     elevation: 0,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17)),
                     shadowColor: Colors.transparent,
                     backgroundColor: Colors.transparent
                 ),
                 onLongPress: ()async {
-                  await provider.onLongBackIconContentTasbeh();
+                  await provider.onLongBackContentTasbeh();
                 },
                 onPressed: () async {
-                  await provider.onPressedBackIconContentTasbeh();
+                  await provider.onPressedBackContentTasbeh();
                 },
                 child: Icon(
                   Icons.arrow_forward_outlined,

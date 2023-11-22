@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/details_screen/quran/presentation/view/widget/page_of_the_quran_body.dart';
+import 'package:Islami/features/details_screen/quran/presentation/view/widget/page_of_the_quran_body.dart';
 import '../../../../../../models/model.page_of_mushaf/PageOfMushafResponse.dart';
 import '../../../model/information_surah_model.dart';
 
@@ -15,7 +15,8 @@ class PageOfTheQuran extends StatelessWidget {
 
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: PageOfTheQuranBody(informationSurahModel: informationSurahModel,pageOfMushafResponse: pageOfMushafResponse,)
+      child: PageOfTheQuranBody(
+        informationSurahModel: informationSurahModel,pageOfMushafResponse: pageOfMushafResponse,)
     );
   }
 }

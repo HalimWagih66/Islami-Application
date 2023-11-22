@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../shared/network/local/shared_preferences/tasbeh_data.dart';
@@ -19,7 +20,7 @@ class ShowCounterTasbeh extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
           color: Theme.of(context).primaryColor.withOpacity(0.5),
         ),
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.symmetric(vertical: 20.h,horizontal: 15.h),
         child: Text(
             "${tasbehProvider.counterNumberTasbeh}",
             style: Theme.of(context).textTheme.bodyLarge),

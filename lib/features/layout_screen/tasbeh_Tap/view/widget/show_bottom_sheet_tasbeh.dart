@@ -10,7 +10,7 @@ class ShowBottomSheetTasbeh extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return TextButton(
           onPressed: () {
-            callBack(index);
+            callBack(context,index);
           },
           child: Container(
             padding: const EdgeInsets.only(top: 20),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/api%20manager/api_manager.dart';
-import 'package:islami_app/features/layout_screen/radio_Tap/view/widget/radio_item.dart';
+import 'package:Islami/api%20manager/api_manager.dart';
+import 'package:Islami/features/layout_screen/radio_Tap/view/widget/radio_item.dart';
 import 'package:provider/provider.dart';
 
-import '../../provider/settings_provider.dart';
-import '../view model/radio_tap_view_model.dart';
+import '../../../../provider/settings_provider.dart';
 
 
 class RadioTap extends StatelessWidget {

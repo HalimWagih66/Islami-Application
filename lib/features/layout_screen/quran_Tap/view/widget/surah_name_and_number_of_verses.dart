@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../../../../models/models.quran/details_sura_arguments.dart';
 import '../../../../details_screen/quran/presentation/view/details_quran.dart';
-import '../../../provider/settings_provider.dart';
+import '../../../../../provider/settings_provider.dart';
 
 class SurahNameAndNumberOfVerses extends StatelessWidget {
   final int endPage;
@@ -25,42 +26,46 @@ class SurahNameAndNumberOfVerses extends StatelessWidget {
         );
       },
       child: Table(
+        columnWidths: const {
+          1:FixedColumnWidth(10)
+        },
         children: [
           TableRow(
             decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: Theme.of(context).hintColor,style: BorderStyle.solid,width: 2))
+              border: Border(bottom: BorderSide(color: Theme.of(context).hintColor,style: BorderStyle.solid,width: 2.w))
             ),
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.symmetric(vertical: 10.h),
                 child: Center(
                   child: Text(
                     numberOfVerses.toString(),
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 20.sp),
                     textAlign: TextAlign.center,
                   ),
                 ),
               ),
               SizedBox(
-                width: 10,
+                width: 10.w,
                 height: MediaQuery.of(context).size.height * 0.075,
                 child: VerticalDivider(
                   color: Theme.of(context).hintColor,
-                  thickness: 2,
-                  //width: 1,
+                  thickness: 2.w,
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 9),
+                margin: EdgeInsets.only(top: 9.h),
                 child: Stack(
                   children: [
-                    isSelectedSurahBookMark?Transform.translate(offset: settingsProvider.isLanguageEnglish()?const Offset(-60,0):const Offset(60,0),
+                    isSelectedSurahBookMark?Transform.translate(offset: settingsProvider.isLanguageEnglish()? Offset(-7.w,0):Offset(7.h,0),
                     child: const Icon(Icons.bookmark,color: Colors.red,size: 40)):const SizedBox(),
-                    Text(
-                      settingsProvider.languageCode == "en"?surahName:surahNameTashkil,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize:23),
-                      textAlign: TextAlign.center,
+                    Center(
+                      child: Text(
+                        settingsProvider.languageCode == "en"?surahName:surahNameTashkil,
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 20.sp),
+                        textAlign: TextAlign.center,
 
+                      ),
                     ),
                   ],
                 ),

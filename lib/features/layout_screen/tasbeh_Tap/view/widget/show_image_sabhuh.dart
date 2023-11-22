@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/layout_screen/provider/settings_provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Islami/provider/settings_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../view model/tasbeh_tap_view_model.dart';
@@ -17,14 +18,13 @@ class ShowImageSabhuh extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           Container(
-              margin: EdgeInsets.only(left: widthScreen * 0.1),
-              padding: EdgeInsets.only(bottom: heightScreen * 0.2),
+              margin: EdgeInsets.only(left: 50.w),
               child: Image(
-                  width: widthScreen * 0.2,
-                  height: heightScreen * 0.2,
-                  image: AssetImage(settingsProvider.getImageHeadSabhuh()))),
+                  width: 73.w,
+                  height:105.h,
+                  image: AssetImage(settingsProvider.getImageHeadSabhuh(),),),),
           Container(
-            padding: EdgeInsets.only(top: heightScreen * 0.1),
+            padding: EdgeInsets.only(top: 80.h),
             child: Transform.rotate(
               angle: tasbehProvider.angle,
               child: GestureDetector(
@@ -32,8 +32,8 @@ class ShowImageSabhuh extends StatelessWidget {
                   await tasbehProvider.onTapClickButtonContentTasbeeh(context);
                 },
                 child: Image(
-                    width: widthScreen * 0.7,
-                    height: heightScreen * 0.7,
+                    width: 232.w,
+                    height: 234.h,
                     image: AssetImage(
                       settingsProvider.getImageBodySabhuh()),
                     )),

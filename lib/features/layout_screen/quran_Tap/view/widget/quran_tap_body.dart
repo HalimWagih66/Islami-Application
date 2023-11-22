@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/layout_screen/quran_Tap/view/widget/surah_name_and_number_of_verses.dart';
+import 'package:Islami/features/layout_screen/quran_Tap/view/widget/surah_name_and_number_of_verses.dart';
 import 'package:provider/provider.dart';
+import '../../../../../models/model.names_surahs/suwar.dart';
+import '../../../../../provider/provider_about_surahs.dart';
+import '../../../../../provider/settings_provider.dart';
 
-import '../../../../../api manager/api_manager.dart';
-import '../../../../details_screen/quran/presentation/view model/details_quran_view_model.dart';
-import '../../../provider/settings_provider.dart';
-import '../view model/quran_tap_view_model.dart';
+class QuranTapBody extends StatefulWidget {
+   const QuranTapBody({super.key});
 
-class QuranTapBody extends StatelessWidget {
-   QuranTapBody({super.key});
+  @override
+  State<QuranTapBody> createState() => _QuranTapBodyState();
+}
+
+class _QuranTapBodyState extends State<QuranTapBody> {
   final List<String> numberOfVerses = [
     "7",
     "286",
@@ -125,6 +129,7 @@ class QuranTapBody extends StatelessWidget {
     '5',
     '6'
   ];
+
   final List<String> surahNames = [
     "ٱلْفَاتِحَةِ",
     "البَقَرَةِ",
@@ -241,16 +246,19 @@ class QuranTapBody extends StatelessWidget {
     "الفَلَقِ",
     "النَّاسِ"
   ];
-
+  dynamic future;
+  @override
+  void initState() {
+     future = Provider.of<SurahsInfoProvider>(context,listen: false).initializeSurahsName(Provider.of<SettingsProvider>(context,listen: false).languageCode == "en"?"eng":"ar");
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    var settingsProvider = Provider.of<SettingsProvider>(context);
-    var quranTapViewModel = Provider.of<DetailsQuranViewModel>(context);
+    var surahsInfoProvider = Provider.of<SurahsInfoProvider>(context);
     return Expanded(
         flex: 3,
-        child: FutureBuilder(
-          future: ApiManager.getNamesSurahs(
-              settingsProvider.languageCode == "en" ? "eng" : "ar"),
+        child: FutureBuilder<List<Surah>?>(
+          future: future,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
@@ -262,8 +270,8 @@ class QuranTapBody extends StatelessWidget {
             return ListView.builder(
               itemBuilder: (context, index) => SurahNameAndNumberOfVerses(
                   suraNumber: index,
-                  isSelectedSurahBookMark: quranTapViewModel.getSelectedSurahBookMark() == index,
-                  surahName: snapshot.data![index].name ?? "",
+                  isSelectedSurahBookMark: surahsInfoProvider.selectedSurahBookMark == index,
+                  surahName: snapshot.data?[index].name ?? "",
                   startPage: snapshot.data?[index].startPage ?? 0,
                   endPage: snapshot.data?[index].endPage ?? 0,
                   numberOfVerses: int.parse(numberOfVerses[index]),

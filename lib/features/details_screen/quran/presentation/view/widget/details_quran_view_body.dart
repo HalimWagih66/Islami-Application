@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/details_screen/quran/presentation/view/widget/page_of_the_quran.dart';
+import 'package:Islami/features/details_screen/quran/presentation/view/widget/page_of_the_quran.dart';
 import '../../../../../../api manager/api_manager.dart';
 import '../../../../../../models/model.page_of_mushaf/PageOfMushafResponse.dart';
 import '../../../model/information_surah_model.dart';

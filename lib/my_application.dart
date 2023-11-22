@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/style/theme_data.dart';
+import 'package:Islami/style/theme_data.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -7,7 +7,7 @@ import 'features/details_screen/hadeth/details_hadeth.dart';
 import 'features/details_screen/quran/presentation/view/details_quran.dart';
 import 'features/details_screen/tasbeh/tasbeh_details.dart';
 import 'features/layout_screen/layout_screen.dart';
-import 'features/layout_screen/provider/settings_provider.dart';
+import 'provider/settings_provider.dart';
 
 class MyApplication extends StatelessWidget {
   const MyApplication({super.key});
@@ -23,6 +23,7 @@ class MyApplication extends StatelessWidget {
         LayoutScreen.routeName: (context) => const LayoutScreen(),
         TasbehDetails.routeName: (context) => const TasbehDetails()
       },
+      title: "Islami",
       initialRoute: LayoutScreen.routeName,
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -35,9 +36,9 @@ class MyApplication extends StatelessWidget {
         Locale('ar'), // Arabic
       ],
       locale: Locale(provider.languageCode),
+      themeMode: provider.themeMode,
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      themeMode: provider.themeMode,
     );
   }
 }

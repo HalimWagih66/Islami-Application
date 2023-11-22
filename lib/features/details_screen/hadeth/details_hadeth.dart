@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/details_screen/hadeth/text_style_hadeth.dart';
+import 'package:Islami/features/details_screen/hadeth/text_style_hadeth.dart';
 import 'package:provider/provider.dart';
 import '../../../models/models.hadeth/hadeth.dart';
-import '../../layout_screen/provider/settings_provider.dart';
+import '../../../provider/settings_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DetailsHadeth extends StatelessWidget {

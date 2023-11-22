@@ -10,7 +10,6 @@ class RadioItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<RadioTapViewModel>(context);
-
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Column(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/layout_screen/tasbeh_Tap/view/widget/show_content_tasbeh.dart';
-import 'package:islami_app/features/layout_screen/tasbeh_Tap/view/widget/show_counter_tasbeh.dart';
-import 'package:islami_app/features/layout_screen/tasbeh_Tap/view/widget/show_image_sabhuh.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Islami/features/layout_screen/tasbeh_Tap/view/widget/show_content_tasbeh.dart';
+import 'package:Islami/features/layout_screen/tasbeh_Tap/view/widget/show_counter_tasbeh.dart';
+import 'package:Islami/features/layout_screen/tasbeh_Tap/view/widget/show_image_sabhuh.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../view model/tasbeh_tap_view_model.dart';
@@ -29,15 +30,15 @@ class _TasbehTapBodyState extends State<TasbehTapBody> {
       children: [
         ShowImageSabhuh(heightScreen: widget.heightScreen, widthScreen: widget.widthScreen),
         SizedBox(
-          height: widget.heightScreen * 0.05,
+          height: 40.h,
         ),
-        Text(AppLocalizations.of(context)!.number_of_praises, style: Theme.of(context).textTheme.titleLarge,),
+        Text(AppLocalizations.of(context)!.number_of_praises, style: Theme.of(context).textTheme.titleLarge),
         SizedBox(
-          height: widget.heightScreen * 0.03,
+          height: 26.h,
         ),
         const ShowCounterTasbeh(),
         SizedBox(
-          height: widget.heightScreen * 0.03,
+          height: 22.h,
         ),
         FutureBuilder(
             future: future,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../provider/settings_provider.dart';
+import '../../../../../provider/settings_provider.dart';
 import 'button_style_bottom_sheet.dart';
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({super.key, required this.textButtonTheFirst, required this.textButtonTheSecond, required this.executeMethodButtonTheFirst, required this.background, required this.executeMethodButtonTheSecond, required this.typeBottomSheet});
@@ -19,7 +19,7 @@ class CustomBottomSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ElevatedButton(
-            style: buttonStyleBottomSheet(alignmentGeometry: settingsProvider.isLanguageEnglish()?Alignment.centerLeft:Alignment.centerRight,context:context,backgroundColor: settingsProvider.isDarkEnabled() ? const Color(0xff414d7c) : const Color(0x51eacc92)),
+            style: buttonStyleBottomSheet(alignmentGeometry: settingsProvider.isLanguageEnglish()?Alignment.centerLeft:Alignment.centerRight,context:context,backgroundColor: settingsProvider.isDarkEnabled() ? const Color(0x64414d7c) : const Color(0x51eacc92)),
               onPressed: () {
                 executeMethodButtonTheFirst();
               },
@@ -29,7 +29,8 @@ class CustomBottomSheet extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .04,
           ),
           ElevatedButton(
-            style: buttonStyleBottomSheet(alignmentGeometry: settingsProvider.isLanguageEnglish()?Alignment.centerLeft:Alignment.centerRight,context:context,backgroundColor: settingsProvider.isDarkEnabled() ? const Color(0xff414d7c) : const Color(0x51eacc92)),
+            style: buttonStyleBottomSheet(alignmentGeometry: settingsProvider.isLanguageEnglish()?Alignment.centerLeft:Alignment.centerRight,context:context,backgroundColor: settingsProvider.isDarkEnabled() ? const Color(
+                0x64414d7c) : const Color(0x51eacc92)),
               onPressed: () {
                 executeMethodButtonTheSecond();
               },

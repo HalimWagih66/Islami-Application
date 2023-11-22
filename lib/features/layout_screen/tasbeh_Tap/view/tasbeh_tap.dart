@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/features/layout_screen/tasbeh_Tap/view/widget/tasbeh_tap_body.dart';
+import 'package:Islami/features/layout_screen/tasbeh_Tap/view/widget/tasbeh_tap_body.dart';
 import 'package:provider/provider.dart';
 import '../view model/tasbeh_tap_view_model.dart';
 
