@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:Islami/features/details_screen/quran/presentation/view/widget/page_of_the_quran_body.dart';
+import 'package:provider/provider.dart';
 import '../../../../../../models/model.page_of_mushaf/PageOfMushafResponse.dart';
 import '../../../model/information_surah_model.dart';
+import '../../view model/details_quran_view_model.dart';
 
 class PageOfTheQuran extends StatelessWidget {
   final PageOfMushafResponse pageOfMushafResponse;
@@ -13,10 +15,13 @@ class PageOfTheQuran extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: PageOfTheQuranBody(
-        informationSurahModel: informationSurahModel,pageOfMushafResponse: pageOfMushafResponse,)
+    return ChangeNotifierProvider(
+      create: (context) => DetailsQuranViewModel(),
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: PageOfTheQuranBody(
+          informationSurahModel: informationSurahModel,pageOfMushafResponse: pageOfMushafResponse,)
+      ),
     );
   }
 }

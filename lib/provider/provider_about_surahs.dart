@@ -14,7 +14,6 @@ class SurahsInfoProvider extends ChangeNotifier{
   initializeQuranData()async{
     QuranData.quranData = await SharedPreferences.getInstance();
     selectedSurahBookMark = QuranData.getSelectedSurahBookMark()??-1;
-
   }
   Future<List<Surah>?> initializeSurahsName(String languageCode)async{
     surahsNameFeature ??= await ApiManager.getNamesSurahs(languageCode);

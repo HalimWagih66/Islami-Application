@@ -270,7 +270,7 @@ class _QuranTapBodyState extends State<QuranTapBody> {
             return ListView.builder(
               itemBuilder: (context, index) => SurahNameAndNumberOfVerses(
                   suraNumber: index,
-                  isSelectedSurahBookMark: surahsInfoProvider.selectedSurahBookMark == index,
+                  isSelectedSurahBookMark: surahsInfoProvider.getSelectedSurahBookMark() == index,
                   surahName: snapshot.data?[index].name ?? "",
                   startPage: snapshot.data?[index].startPage ?? 0,
                   endPage: snapshot.data?[index].endPage ?? 0,

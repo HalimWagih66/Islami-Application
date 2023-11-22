@@ -37,12 +37,6 @@ class DetailsQuranViewModel extends ChangeNotifier {
         }
       }
   }
-  // bool checkPageBookMark({required int currentSurahNumber,required int currentPageNumber}){
-  //   if(currentSurahNumber == QuranData.getSelectedSurahBookMark() && currentPageNumber ==QuranData.getSelectedPageBookMark()){
-  //     return true;
-  //   }
-  //   return false;
-  // }
   Future<void>playAudioAya({required int surahNumber,required int ayaNumber})async{
     if (isPlay) {
       audioPlayerAya.pause();

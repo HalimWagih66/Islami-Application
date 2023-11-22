@@ -7,7 +7,6 @@ import 'package:Islami/shared/network/local/shared_preferences/settings_data.dar
 import 'package:Islami/shared/network/local/shared_preferences/tasbeh_data.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'features/details_screen/quran/presentation/view model/details_quran_view_model.dart';
 import 'provider/settings_provider.dart';
 import 'features/layout_screen/radio_Tap/view model/radio_tap_view_model.dart';
 import 'my_application.dart';
