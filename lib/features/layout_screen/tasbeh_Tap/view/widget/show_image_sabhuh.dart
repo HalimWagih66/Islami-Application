@@ -6,9 +6,7 @@ import 'package:provider/provider.dart';
 import '../../view model/tasbeh_tap_view_model.dart';
 
 class ShowImageSabhuh extends StatelessWidget {
-  const ShowImageSabhuh({super.key, required this.widthScreen, required this.heightScreen});
-  final double widthScreen;
-  final double heightScreen;
+  const ShowImageSabhuh({super.key});
   @override
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context,listen: false);

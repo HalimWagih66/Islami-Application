@@ -18,7 +18,7 @@ class TitleTableSurahs extends StatelessWidget {
           children: [
             TableRow(
                 children: [
-                  Text(AppLocalizations.of(context)!.number_of_verses,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 20.sp),textAlign: TextAlign.center,),
+                  Text(AppLocalizations.of(context)!.number_of_verses,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25.sp),textAlign: TextAlign.center,),
                   Text(AppLocalizations.of(context)!.surah_name,style: Theme.of(context).textTheme.titleLarge,textAlign: TextAlign.center,),
                 ]
             )

@@ -38,7 +38,7 @@ class MyThemeData {
         titleLarge: TextStyle(
             color: lightMainTextColor,
             fontFamily: 'ElMessiri',
-            fontSize: 20.sp,
+            fontSize: 25.sp,
             fontWeight: FontWeight.bold),
         bodyLarge: TextStyle(
           color: lightMainTextColor,
@@ -97,7 +97,7 @@ class MyThemeData {
         titleLarge: TextStyle(
           color: darkMainTextColor,
           fontFamily: 'ElMessiri',
-          fontSize: 20.sp,
+          fontSize: 25.sp,
           fontWeight: FontWeight.bold,
         ),
         bodyLarge: TextStyle(

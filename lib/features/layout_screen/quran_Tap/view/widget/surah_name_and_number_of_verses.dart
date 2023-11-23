@@ -40,7 +40,7 @@ class SurahNameAndNumberOfVerses extends StatelessWidget {
                 child: Center(
                   child: Text(
                     numberOfVerses.toString(),
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 20.sp),
+                    style: Theme.of(context).textTheme.titleMedium,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -62,7 +62,7 @@ class SurahNameAndNumberOfVerses extends StatelessWidget {
                     Center(
                       child: Text(
                         settingsProvider.languageCode == "en"?surahName:surahNameTashkil,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontSize: 20.sp),
+                        style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.center,
 
                       ),

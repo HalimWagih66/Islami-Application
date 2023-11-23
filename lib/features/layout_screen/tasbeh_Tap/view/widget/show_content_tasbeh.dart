@@ -7,8 +7,7 @@ import 'package:provider/provider.dart';
 import 'child_bottom_content_tasbeh_ink_will.dart';
 
 class ShowContentTasbeh extends StatelessWidget {
-  const ShowContentTasbeh({super.key, required this.widthScreen});
-  final double widthScreen;
+  const ShowContentTasbeh({super.key});
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<TasbehTapViewModel>(context);
@@ -18,7 +17,7 @@ class ShowContentTasbeh extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
         color: Theme.of(context).hintColor,
       ),
-      width: widthScreen * 0.9,
+      width: MediaQuery.of(context).size.height * 0.9,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -56,7 +55,7 @@ class ShowContentTasbeh extends StatelessWidget {
               onLongPress: ()async {
                 await provider.onLongPressContentTasbeh(context);
               },
-              child: ChildBottomContentInkWil(widthScreen: widthScreen),
+              child: const ChildBottomContentInkWil(),
             ),
           ),
           Expanded(

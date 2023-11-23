@@ -6,8 +6,7 @@ import '../../../../../provider/settings_provider.dart';
 import '../../view model/tasbeh_tap_view_model.dart';
 
 class ChildBottomContentInkWil extends StatelessWidget {
-  const ChildBottomContentInkWil({super.key, required this.widthScreen});
-  final double widthScreen;
+  const ChildBottomContentInkWil({super.key});
   @override
   Widget build(BuildContext context) {
     var tasbehProvider = Provider.of<TasbehTapViewModel>(context);
@@ -22,8 +21,7 @@ class ChildBottomContentInkWil extends StatelessWidget {
                       : const Color(0xF1F1F1FF),
                   width: 2.w,
                   style: BorderStyle.solid),),),
-          width: widthScreen * 0.7,
-          padding: const EdgeInsets.all(13),
+      padding: const EdgeInsets.all(13),
           child: Text(
             tasbehProvider.contentTasbeh[tasbehProvider.selectedContentTasbeh],
             textAlign: TextAlign.center,

@@ -24,7 +24,7 @@ class FieldChooseAppState  extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge
-                ?.copyWith(fontWeight: FontWeight.w100, fontSize: 23.sp),
+                ?.copyWith(fontWeight: FontWeight.w400, fontSize: 30.sp),
           ),
           Icon(Icons.arrow_drop_down_outlined,color: Theme.of(context).hintColor),
         ],

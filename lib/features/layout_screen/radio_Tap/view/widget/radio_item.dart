@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../../../../models/model.radio/radio.dart';
 import '../../view model/radio_tap_view_model.dart';
@@ -15,6 +16,9 @@ class RadioItem extends StatelessWidget {
       child: Column(
         children: [
           Text(radioModel[provider.selectedRadioStation].name??"",style: Theme.of(context).textTheme.titleLarge,),
+          SizedBox(
+            height: 20.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

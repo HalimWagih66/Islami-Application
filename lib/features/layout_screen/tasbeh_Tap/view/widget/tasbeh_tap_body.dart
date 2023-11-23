@@ -8,9 +8,8 @@ import 'package:provider/provider.dart';
 import '../../view model/tasbeh_tap_view_model.dart';
 
 class TasbehTapBody extends StatefulWidget {
-  const TasbehTapBody({super.key, required this.heightScreen, required this.widthScreen});
-  final double heightScreen;
-  final double widthScreen;
+  const TasbehTapBody({super.key});
+
 
   @override
   State<TasbehTapBody> createState() => _TasbehTapBodyState();
@@ -25,32 +24,35 @@ class _TasbehTapBodyState extends State<TasbehTapBody> {
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        ShowImageSabhuh(heightScreen: widget.heightScreen, widthScreen: widget.widthScreen),
-        SizedBox(
-          height: 40.h,
-        ),
-        Text(AppLocalizations.of(context)!.number_of_praises, style: Theme.of(context).textTheme.titleLarge),
-        SizedBox(
-          height: 26.h,
-        ),
-        const ShowCounterTasbeh(),
-        SizedBox(
-          height: 22.h,
-        ),
-        FutureBuilder(
-            future: future,
-            builder: (context, snapshot) {
-              if(snapshot.connectionState == ConnectionState.waiting){
-               return const Center(child: CircularProgressIndicator());
-              }
-              return ShowContentTasbeh(widthScreen: widget.widthScreen);
-            },
-        )
-        //ShowContentTasbeh(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const ShowImageSabhuh(),
+          SizedBox(
+            height: 40.h,
+          ),
+          Text(AppLocalizations.of(context)!.number_of_praises, style: Theme.of(context).textTheme.titleLarge),
+          SizedBox(
+            height: 26.h,
+          ),
+          const ShowCounterTasbeh(),
+          SizedBox(
+            height: 22.h,
+          ),
+          FutureBuilder(
+              future: future,
+              builder: (context, snapshot) {
+                if(snapshot.connectionState == ConnectionState.waiting){
+                 return const Center(child: CircularProgressIndicator());
+                }
+                return const ShowContentTasbeh();
+              },
+          )
+          //ShowContentTasbeh(),
+        ],
+      ),
     );
   }
 }

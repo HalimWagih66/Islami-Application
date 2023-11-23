@@ -11,8 +11,8 @@ class TasbehTap extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => TasbehTapViewModel(),
-      child: SingleChildScrollView(
-        child: TasbehTapBody(widthScreen:  MediaQuery.of(context).size.width,heightScreen: MediaQuery.of(context).size.width)
+      child: const SingleChildScrollView(
+        child: TasbehTapBody()
       ),
     );
   }
