@@ -54,7 +54,7 @@ class MyThemeData {
           fontWeight: FontWeight.normal),
         bodyMedium: TextStyle(
           color: lightMainTextColor,
-          fontFamily: 'QuranFont',
+          fontFamily: 'Amiri-Regular',
           fontSize: 25.sp,
           fontWeight: FontWeight.w500,
         ),
@@ -114,8 +114,8 @@ class MyThemeData {
           fontWeight: FontWeight.normal,),
         bodyMedium: TextStyle(
             color: darkMainTextColor,
-            fontFamily: 'QuranFont',
-            fontSize: 21.sp,
+            fontFamily: 'Amiri-Regular',
+            fontSize: 25.sp,
             fontWeight: FontWeight.w500),
         bodySmall: TextStyle(color: darkMainTextColor, fontSize: 20.sp),
       ),

@@ -1,4 +1,5 @@
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:Islami/features/details_screen/quran/model/information_surah_model.dart';
 import 'package:Islami/models/model.page_of_mushaf/PageOfMushafResponse.dart';
@@ -81,11 +82,15 @@ class _PageOfTheQuranBodyState extends State<PageOfTheQuranBody> {
                                     style: Theme.of(context).textTheme.bodyMedium),
                               ))
                         },
+
                         TextSpan(
+
                             text: ' '
                                 "${detailsQuranViewModel.ayahs[detailsQuranViewModel.ayahs[i].numberInSurah == 1 ? i : i].text}"
                                 ' ',
-                            style: Theme.of(context).textTheme.bodyMedium),
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(height: 3),
+                        ),
+
                         numberAyaWidget(
                             surahNumber:
                             widget.informationSurahModel.suraNumber,

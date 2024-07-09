@@ -5,6 +5,8 @@ import '../../../models/models.hadeth/hadeth.dart';
 import '../../../provider/settings_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../style/theme_data.dart';
+
 class DetailsHadeth extends StatelessWidget {
   static const routeName = "DetailsHadeth";
 
@@ -34,6 +36,7 @@ class DetailsHadeth extends StatelessWidget {
         body: Card(
           margin: const EdgeInsets.all(20),
           elevation: 15,
+          color: provider.isDarkEnabled() == true ? MyThemeData.darkPrimaryColor : Colors.white,
           shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
             borderSide: const BorderSide(style: BorderStyle.solid,width: 1,color: Colors.transparent)

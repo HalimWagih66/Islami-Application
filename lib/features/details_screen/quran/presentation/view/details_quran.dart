@@ -1,3 +1,4 @@
+import 'package:Islami/style/theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:Islami/features/details_screen/quran/presentation/view/widget/details_quran_view_body.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +33,7 @@ class DetailsSurah extends StatelessWidget {
         body: Card(
           margin: const EdgeInsets.all(10),
           elevation: 15,
+          color: provider.isDarkEnabled() == true ? MyThemeData.darkPrimaryColor:Colors.white,
           shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
             borderSide: const BorderSide(

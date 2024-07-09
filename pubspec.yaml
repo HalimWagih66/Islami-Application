@@ -102,6 +102,12 @@ flutter:
     - family: ElMessiri
       fonts:
         - asset: assets/fonts/ElMessiri-Regular.ttf
+    - family: UthmanicHafs
+      fonts:
+        - asset: assets/fonts/UthmanicHafs_V20.ttf
+    - family: Amiri-Regular
+      fonts:
+        - asset: assets/fonts/Amiri-Regular.ttf
 #         - asset: fonts/Schyler-Italic.ttf
 #           style: italic
   #   - family: Trajan Pro
